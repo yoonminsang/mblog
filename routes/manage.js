@@ -15,6 +15,10 @@ router.get("/", function (request, response) {
       throw error;
     }
     var recentPost = ``;
+    console.log(post.length);
+    if (post.length == 0) {
+      recentPost += `<div class="manage_post_inner"><p style="margin-left:10px; color:gray;font-size:20px">글을 등록하면 최대 4개까지 최근 글이 보입니다.</p></div>`;
+    }
     for (var i = 0; i < post.length; i++) {
       var content = post[i].content.replace(/(<([^>]+)>)/gi, "");
       content = content.replace(/&nbsp;/g, " ").substring(0, 400);
@@ -206,7 +210,7 @@ router.get("/post/page/:pageId", function (request, response) {
             <button class="manage_post_btn_see">보기</button>
             <button class="manage_post_btn_search">검색</button>
             <div class="manage_post_see">
-              <a href="/manage/post" class="all_post">전체 글 보기</a>
+              <a href="/manage/post/page/1" class="all_post">전체 글 보기</a>
               <strong class="str_opt">카테고리별 보기</strong>
               <ul>${list}</ul>
             </div>

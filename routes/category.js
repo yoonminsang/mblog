@@ -124,7 +124,10 @@ router.get("/:pageId2/post/:pageId", function (request, response) {
               if (error3) {
                 throw error3;
               }
-              db.query(`SELECT id FROM post order by id desc`, function (error5, allPost) {
+              db.query(`SELECT id FROM post where category_id=? order by id desc`, [id2], function (
+                error5,
+                allPost
+              ) {
                 if (error5) {
                   throw error5;
                 }
@@ -136,8 +139,21 @@ router.get("/:pageId2/post/:pageId", function (request, response) {
                   }
                 }
                 // num = parseInt(num / 5) * 5;
-                if (num > 1) {
-                  num = num - 2;
+                console.log(num);
+                console.log(allPost.length);
+                if (allPost.length > 4) {
+                  if (num == 0);
+                  else if (num == 1) {
+                    num = 0;
+                  } else if (num < allPost.length - 2) {
+                    num = num - 2;
+                  } else if (num == allPost.length - 2) {
+                    num = num - 3;
+                  } else {
+                    num = num - 4;
+                  }
+                } else {
+                  num = 0;
                 }
                 db.query(
                   `SELECT id, title, date_format(created, '%Y-%m-%d %H:%i:%s') as created FROM post WHERE category_id=? order by id desc limit ${num}, 5  `,
@@ -154,7 +170,7 @@ router.get("/:pageId2/post/:pageId", function (request, response) {
                     }
                     var _url = request.url;
                     var queryData = url.parse(_url);
-                    var comment_list = template.commentList(comments);
+                    var comment_list = template.commentList(comments, queryData.href);
                     var list = template.categoryList(category, post);
                     var title = post2[0].title;
                     var title2 = `
@@ -213,7 +229,7 @@ router.post("/comments/create_process", function (request, response) {
       if (error) {
         throw error;
       }
-      response.redirect(`/category/${post.href}`);
+      response.redirect(`/category${post.href}`);
     }
   );
 });

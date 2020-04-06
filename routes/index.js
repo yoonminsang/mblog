@@ -2,12 +2,12 @@ var db = require("../lib/db");
 var express = require("express");
 var router = express.Router();
 var template = require("../lib/template.js");
-router.get("/", function(request, response) {
-  db.query(`SELECT * FROM category`, function(error, category) {
+router.get("/", function (request, response) {
+  db.query(`SELECT * FROM category`, function (error, category) {
     if (error) {
       throw error;
     }
-    db.query(`SELECT category_id FROM post`, function(error2, post) {
+    db.query(`SELECT category_id FROM post`, function (error2, post) {
       if (error2) {
         throw error2;
       }
