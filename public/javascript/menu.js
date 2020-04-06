@@ -4,6 +4,7 @@ $(document).ready(function() {
       $(".menu").attr("class", "menu_on");
       $(".body").attr("class", "body_on");
       $(".bt_menu img").attr("src", "/static/images/xx.png");
+      //   $(".comment, textarea, input").css("background", "lightgray");
     } else {
       $(".menu_on").attr("class", "menu");
       $(".body_on").attr("class", "body");

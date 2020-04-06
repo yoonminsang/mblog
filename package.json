@@ -1,7 +1,6 @@
 {
   "name": "ms",
   "version": "1.0.0",
-  "description": "",
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -14,5 +13,25 @@
     "express": "^4.17.1",
     "helmet": "^3.21.3",
     "mysql": "^2.18.1"
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yoonminsang/mblog.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yoonminsang/mblog/issues"
+  },
+  "homepage": "https://github.com/yoonminsang/mblog#readme",
+  "description": "",
+  "devDependencies": {
+    "@types/node": "^12.0.10",
+    "@typescript-eslint/eslint-plugin": "^1.11.0",
+    "@typescript-eslint/parser": "^1.11.0",
+    "eslint": "^6.0.1",
+    "eslint-config-prettier": "^6.0.0",
+    "typescript": "^3.5.2"
   }
 }

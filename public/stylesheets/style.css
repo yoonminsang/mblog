@@ -5,6 +5,7 @@ div,
 ul,
 li,
 button,
+input,
 p {
   padding: 0;
   margin: 0;
@@ -14,6 +15,7 @@ button,
 select {
   cursor: pointer;
   outline: none;
+  border: none;
 }
 
 a {
@@ -208,6 +210,10 @@ hr {
   padding: 30px 0;
 }
 
+.post-item:first-child a {
+  padding: 15px 0 30px;
+}
+
 .img {
   float: right;
   margin-left: 80px;
@@ -245,4 +251,230 @@ hr {
 
 .section_header h1 {
   margin: 15px 0;
+}
+
+.comment_box {
+  border-top: 2px solid #525eaa;
+  font-size: 13px;
+  color: #333;
+}
+
+.comment_box li {
+  border-bottom: 1px solid lightgray;
+}
+
+.comment_box .comment_box_info {
+  padding: 9px 3px 7px 3px;
+}
+
+.comment_box .comment_box_info:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.comment_box .comment_box_info .comment_box_nick {
+  float: left;
+  width: 132px;
+  margin-right: 33px;
+  margin-top: 3px;
+}
+
+.comment_box .comment_box_info .comment_box_nick span {
+  color: gray;
+  font-size: 12px;
+}
+
+.comment_box .comment_box_info .comment_box_content {
+  float: left;
+}
+
+.comment_box .comment_box_info .comment_box_content p {
+  word-break: break-all;
+  line-height: 20px;
+  overflow: hidden;
+  width: 530px;
+}
+
+.comment_box .comment_box_info .comment_box_time {
+  float: right;
+}
+
+.comment_box .comment_box_info .comment_box_time span {
+  color: gray;
+  font-size: 12px;
+}
+
+.comment_box .comment_box_info .comment_box_time .comment_box_del {
+  float: right;
+  margin-left: 10px;
+  position: relative;
+}
+
+.comment_box .comment_box_info .comment_box_time .comment_box_del .btn_delete {
+  width: 13px;
+  height: 13px;
+  font-size: 10px;
+  border: 1px solid #c5cdd7;
+  color: white;
+  background: lightgray;
+}
+
+.delete_box {
+  position: absolute;
+  margin: -25px 0 0 30px;
+  width: 218px;
+  height: 31px;
+  border: 2px solid #3c4790;
+}
+
+.delete_box .ps {
+  float: left;
+  width: 129px;
+  height: 31px;
+  line-height: 34px;
+  padding: 0 5px;
+  border: 0;
+  background: #fff;
+  font-size: 14px;
+}
+
+.delete_box .confirm {
+  float: left;
+  width: 49px;
+  height: 31px;
+  line-height: 32px;
+  background: #4a57a8;
+  color: #fff;
+  font-weight: bold;
+  text-shadow: 0px 1px #343d8e;
+  border: none;
+}
+
+.delete_box .cancle {
+  float: left;
+  width: 30px;
+  height: 31px;
+  background: #3c4790;
+}
+
+.comment {
+  border-bottom: 2px solid #525eaa;
+  padding: 12px 12px 12px;
+  background: #fafafa;
+  border-top: 2px solid #525eaa;
+  vertical-align: baseline;
+  margin-top: 30px;
+}
+
+.comment_user {
+  float: left;
+}
+
+.user_info_input {
+  width: 140px;
+  height: 30px;
+  border: 1px solid #cecdce;
+  margin-bottom: 5px;
+}
+
+.user_info_input input {
+  width: 126px;
+  height: 28px;
+  line-height: 29px;
+  padding: 2px 7px 0;
+  border: none;
+  font-size: 12px;
+  vertical-align: top;
+}
+
+.comment_cont {
+  margin-left: 150px;
+}
+
+.comment_write textarea {
+  width: 650px;
+  height: 78px;
+  padding: 13px;
+  border: 1px solid #cecdce;
+  background: #fff;
+  font-size: 13px;
+  color: #333;
+  line-height: 18px;
+}
+
+.comment_bt {
+  position: relative;
+  height: 34px;
+}
+.comment_bt button {
+  position: absolute;
+  right: 10px;
+  width: 85px;
+  height: 31px;
+  line-height: 30px;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 2px;
+  font-size: 12px;
+  font-weight: bold;
+  background: #4a57a8;
+  border-color: #3c4790;
+  text-shadow: 0px -1px #343d8e;
+  color: #fff;
+}
+
+.post_pagination {
+  margin: 50px 330px;
+}
+
+.post_pagination h4 {
+  color: #737373 !important;
+  border-color: #e5e5e5 !important;
+  font-size: 12px !important;
+  margin: 0 !important;
+  border-bottom: 1px solid #e5e5e5 !important;
+  padding: 2px 0 6px !important;
+}
+
+.post_pagination table {
+  table-layout: fixed;
+  border-collapse: collapse;
+  width: 100% !important;
+  margin-top: 10px !important;
+  text-align: center;
+  font-size: 0.875em;
+  line-height: 1.5714;
+}
+
+.post_pagination table tbody {
+  color: #909090 !important;
+}
+
+.post_pagination table tbody th {
+  border: 0 !important;
+  text-align: left;
+  font-weight: 400;
+  font-size: 12px !important;
+  word-break: break-all;
+  overflow: hidden;
+  line-height: 1.5;
+  padding: 0 0 4px !important;
+}
+
+.post_pagination table tbody th a {
+  color: #909090 !important;
+}
+
+.post_pagination table tbody th .current {
+  font-weight: bold;
+  text-decoration: none !important;
+  border-bottom: 1px solid !important;
+}
+
+.post_pagination table tbody td {
+  text-align: right;
+  width: 120px;
+  font-size: 11px;
+  padding: 0 0 4px !important;
 }

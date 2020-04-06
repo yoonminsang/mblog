@@ -1,6 +1,6 @@
 var express = require("express");
 var app = express();
-var port = 3000;
+var port = 80;
 var bodyParser = require("body-parser");
 var compression = require("compression");
 var helmet = require("helmet");
